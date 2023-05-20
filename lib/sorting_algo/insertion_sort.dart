@@ -18,11 +18,22 @@ class insertion_sort extends StatelessWidget {
           padding: const EdgeInsets.all(30.0),
           child: display_array(array),
         ),
-        ElevatedButton(
-          onPressed: () {
-            insertionProvider.insertionSort();
-          },
-          child: Text('Start Sorting'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                insertionProvider.generaterandom();
+              },
+              child: Text("Random Array"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                insertionProvider.insertionSort();
+              },
+              child: Text('Start Sorting'),
+            ),
+          ],
         ),
       ],
     );
