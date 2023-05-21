@@ -1,7 +1,17 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class quick_Sort_Provider with ChangeNotifier {
   List<int> numbers = [46, 60, 21, 10, 90, 5, 30, 50];
+  void generaterandom() async {
+    int random = Random().nextInt(15) + 10;
+    numbers.clear();
+    notifyListeners();
+    await Future.delayed(Duration(milliseconds: 200));
+    numbers = List.generate(random, (index) => Random().nextInt(50) + 10);
+    notifyListeners();
+  }
 
   Future<void> quickSort() async {
     await _quickSortHelper(0, numbers.length - 1);

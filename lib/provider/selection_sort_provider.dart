@@ -1,9 +1,20 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:sorting/sorting_algo/selection_sort.dart';
 
 class selection_sort_provider with ChangeNotifier {
   List<int> numbers = [64, 34, 25, 12, 22, 11, 90];
   bool isSorting = false;
+  void generaterandom() async {
+    int random = Random().nextInt(15) + 10;
+    numbers.clear();
+    notifyListeners();
+    await Future.delayed(Duration(milliseconds: 200));
+    numbers = List.generate(random, (index) => Random().nextInt(50) + 10);
+    notifyListeners();
+  }
+
   void selection_sort() async {
     if (isSorting) return;
 

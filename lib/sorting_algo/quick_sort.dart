@@ -18,11 +18,22 @@ class quick_sort extends StatelessWidget {
           padding: const EdgeInsets.all(30.0),
           child: display_array(array),
         ),
-        ElevatedButton(
-          onPressed: () {
-            quickProvider.quickSort();
-          },
-          child: Text('Start Sorting'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                quickProvider.generaterandom();
+              },
+              child: Text('Random Array'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                quickProvider.quickSort();
+              },
+              child: Text('Start Sorting'),
+            ),
+          ],
         ),
       ],
     );

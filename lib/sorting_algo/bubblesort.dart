@@ -23,7 +23,7 @@ class bubble_sort extends StatelessWidget {
               onPressed: () {
                 numberListProvider.generaterandom();
               },
-              child: Text("Random array"),
+              child: Text("Random Array"),
             ),
             ElevatedButton(
               onPressed: () {

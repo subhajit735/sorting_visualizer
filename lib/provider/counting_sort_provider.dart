@@ -1,7 +1,18 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class counting_sort_provider with ChangeNotifier {
   List<int> arr = [64, 34, 25, 12, 22, 11, 90];
+
+  void generaterandom() async {
+    int random = Random().nextInt(15) + 10;
+    arr.clear();
+    notifyListeners();
+    await Future.delayed(Duration(milliseconds: 200));
+    arr = List.generate(random, (index) => Random().nextInt(50) + 10);
+    notifyListeners();
+  }
 
   void countingsSort() async {
     // Create an array to store the count of each element
