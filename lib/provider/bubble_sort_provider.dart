@@ -7,7 +7,6 @@ class bubble_sort_provider with ChangeNotifier {
   List<int> numbers = [64, 34, 25, 12, 22, 11, 90];
 
   void generaterandom() async {
-    print("dfdsf");
     int random = Random().nextInt(15) + 10;
     numbers.clear();
     notifyListeners();

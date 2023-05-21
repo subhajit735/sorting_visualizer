@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:sorting/code_c++/insertion.dart';
 import 'package:sorting/controller.dart';
 import 'package:sorting/sorting_algo/bubblesort.dart';
 import 'package:sorting/sorting_algo/insertion_sort.dart';
@@ -16,7 +17,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  late double speed = 1;
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    super.initState();
+    speed = 1;
+  }
+
   int selectedItem = 1;
+
   void _onDropdownChanged(int selectedItem) {
     setState(() {
       selectedItem = selectedItem;
@@ -39,6 +50,8 @@ class _HomeState extends State<Home> {
     quick_sort()
   ];
 
+  List<Widget> code = [insertion_code()];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -53,11 +66,6 @@ class _HomeState extends State<Home> {
               child: Column(
                 children: [
                   pages[selectedItem],
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: "Enter Element",
-                    ),
-                  ),
                   DropdownButton(
                     elevation: 10,
                     hint: Text(sort_list[selectedItem]),
@@ -92,6 +100,8 @@ class _HomeState extends State<Home> {
                       });
                     },
                   ),
+
+                  // code[0],
                 ],
               ),
             ),

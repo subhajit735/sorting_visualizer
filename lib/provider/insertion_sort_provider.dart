@@ -6,8 +6,7 @@ class insertion_provider with ChangeNotifier {
   List<int> arr = [46, 60, 21, 10, 90, 5, 30, 50];
 
   void generaterandom() async {
-    print("dfdsf");
-    int random = Random().nextInt(15) + 10;
+    int random = Random().nextInt(20) + 10;
     arr.clear();
     notifyListeners();
     await Future.delayed(Duration(milliseconds: 200));
@@ -23,7 +22,7 @@ class insertion_provider with ChangeNotifier {
 
       while (j >= 0 && arr[j] > key) {
         arr[j + 1] = arr[j];
-        await Future.delayed(Duration(milliseconds: 500));
+        await Future.delayed(Duration(microseconds: 1000));
         notifyListeners();
         j = j - 1;
       }

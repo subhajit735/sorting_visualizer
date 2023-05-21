@@ -7,6 +7,7 @@ import 'package:sorting/provider/insertion_sort_provider.dart';
 
 class insertion_sort extends StatelessWidget {
   insertion_sort({super.key});
+ 
 
   @override
   Widget build(BuildContext context) {
