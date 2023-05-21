@@ -10,7 +10,7 @@ class MergeSortProvider with ChangeNotifier {
     numbers.clear();
     notifyListeners();
     await Future.delayed(Duration(milliseconds: 200));
-    numbers = List.generate(random, (index) => Random().nextInt(50) + 10);
+    numbers = List.generate(random, (index) => Random().nextInt(200) + 10);
     notifyListeners();
   }
 

@@ -9,11 +9,22 @@ class bar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 10,
-      height: height.toDouble() * 3.5,
-      decoration: BoxDecoration(
-        border: Border.all(width: 1),
-        color: Colors.amber,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Text(
+            height.toString(),
+            style: TextStyle(fontSize: 10),
+          ),
+          Container(
+            width: 6,
+            height: height.toDouble() * 1.4,
+            decoration: BoxDecoration(
+              border: Border.all(width: 1),
+              color: Colors.amber,
+            ),
+          ),
+        ],
       ),
     );
   }

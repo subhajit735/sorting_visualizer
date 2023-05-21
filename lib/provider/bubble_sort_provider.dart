@@ -7,11 +7,11 @@ class bubble_sort_provider with ChangeNotifier {
   List<int> numbers = [64, 34, 25, 12, 22, 11, 90];
 
   void generaterandom() async {
-    int random = Random().nextInt(15) + 10;
+    int random = Random().nextInt(15) + 5;
     numbers.clear();
     notifyListeners();
     await Future.delayed(Duration(milliseconds: 200));
-    numbers = List.generate(random, (index) => Random().nextInt(50) + 10);
+    numbers = List.generate(random, (index) => Random().nextInt(200) + 10);
     notifyListeners();
   }
 

@@ -29,8 +29,7 @@ class _display_arrayState extends State<display_array> {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: widget.numbers.map((int height) {
+          children: widget.numbers.map((height) {
             return bar(height);
           }).toList(),
         ),

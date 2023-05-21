@@ -10,7 +10,7 @@ class counting_sort_provider with ChangeNotifier {
     arr.clear();
     notifyListeners();
     await Future.delayed(Duration(milliseconds: 200));
-    arr = List.generate(random, (index) => Random().nextInt(50) + 10);
+    arr = List.generate(random, (index) => Random().nextInt(200) + 10);
     notifyListeners();
   }
 

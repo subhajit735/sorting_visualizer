@@ -11,7 +11,7 @@ class selection_sort_provider with ChangeNotifier {
     numbers.clear();
     notifyListeners();
     await Future.delayed(Duration(milliseconds: 200));
-    numbers = List.generate(random, (index) => Random().nextInt(50) + 10);
+    numbers = List.generate(random, (index) => Random().nextInt(200) + 10);
     notifyListeners();
   }
 
@@ -32,7 +32,7 @@ class selection_sort_provider with ChangeNotifier {
         }
       }
 
-      await Future.delayed(Duration(milliseconds: 500));
+      await Future.delayed(Duration(milliseconds: 200));
 
       if (minIndex != i) {
         int temp = numbers[i];

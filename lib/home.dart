@@ -66,39 +66,46 @@ class _HomeState extends State<Home> {
               child: Column(
                 children: [
                   pages[selectedItem],
-                  DropdownButton(
-                    elevation: 10,
-                    hint: Text(sort_list[selectedItem]),
-
-                    // value: "Select a sort",
-                    items: [
-                      DropdownMenuItem(
-                        value: 0,
-                        child: Text('Insertion Sort'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        "Select a Sort ",
+                        style: TextStyle(fontSize: 18),
                       ),
-                      DropdownMenuItem(
-                        value: 1,
-                        child: Text('Bubble Sort'),
-                      ),
-                      DropdownMenuItem(
-                        value: 2,
-                        child: Text('Selection Sort'),
-                      ),
-                      DropdownMenuItem(
-                        value: 3,
-                        child: Text('Merge Sort'),
-                      ),
-                      DropdownMenuItem(
-                        value: 4,
-                        child: Text('Quick Sort'),
+                      DropdownButton(
+                        elevation: 10,
+                        hint: Text(sort_list[selectedItem]),
+                        items: [
+                          DropdownMenuItem(
+                            value: 0,
+                            child: Text('Insertion Sort'),
+                          ),
+                          DropdownMenuItem(
+                            value: 1,
+                            child: Text('Bubble Sort'),
+                          ),
+                          DropdownMenuItem(
+                            value: 2,
+                            child: Text('Selection Sort'),
+                          ),
+                          DropdownMenuItem(
+                            value: 3,
+                            child: Text('Merge Sort'),
+                          ),
+                          DropdownMenuItem(
+                            value: 4,
+                            child: Text('Quick Sort'),
+                          ),
+                        ],
+                        onChanged: (value) {
+                          setState(() {
+                            selectedItem = value!;
+                            // print(selectedItem);
+                          });
+                        },
                       ),
                     ],
-                    onChanged: (value) {
-                      setState(() {
-                        selectedItem = value!;
-                        // print(selectedItem);
-                      });
-                    },
                   ),
 
                   // code[0],
